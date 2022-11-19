@@ -27,23 +27,51 @@ def valid_rank(value):
   return False
 
 
+# Function to return the name of the suit when given the initials..
 def suit_full_names():
   suitDict = {"S": "Spades", "D": "Diamonds", "H": "Hearts", "C": "Cubs"}
 
-  # suitName = suitDict["H"]
-  # suitName = str(input("Enter a card. "))
-  # suit = suitDict[1]
-  print(suitDict["S"])
-  # if suit == suitDict["S"]:
-  #   print(suit)
-
-  # print(suitName)
+  suitName = str(input("Enter a card. "))
   
+  if suitName[1] == "S":
+    print(suitDict["S"])
+  elif suitName[1] == "D":
+    print(suitDict["D"])
+  elif suitName[1] == "H":
+    print(suitDict["H"])
+  elif suitName[1] == "C":
+    print(suitDict["C"])
+  else:
+    raise ValueError("invalid suit symbol " + suitName[1])
 
 
-# You need to complete the else condition otherwise you will get red squiges on the next line. Ok?
+def rank_points():
+  points_dict = {"A": 11, "7": 10, "K": 4, "J": 3, "Q": 2}
+
+  suitName = str(input("Enter a card. "))
+
+  if suitName[0] == "A":
+    print(points_dict["A"])
+  elif suitName[0] == "7":
+    print(points_dict["7"])
+  elif suitName[0] == "K":
+    print(points_dict["K"])
+  elif suitName[0] == "J":
+    print(points_dict["J"])
+  elif suitName[0] == "Q":
+    print(points_dict["Q"])
+  else:
+    raise ValueError("invalid suit symbol " + suitName[1])
+
+def rank_higher_than(r1, r2):
+  
+    
+  
+ 
+  
+  
 # question = str(input("Enter a card"))
 
 # print(valid_suit(question))
 
-suit_full_names()
+rank_points()
