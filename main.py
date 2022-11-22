@@ -32,7 +32,7 @@ def suit_full_names():
   suitDict = {"S": "Spades", "D": "Diamonds", "H": "Hearts", "C": "Cubs"}
 
   suitName = str(input("Enter a card. "))
-  
+
   if suitName[1] == "S":
     print(suitDict["S"])
   elif suitName[1] == "D":
@@ -63,15 +63,31 @@ def rank_points():
   else:
     raise ValueError("invalid suit symbol " + suitName[1])
 
-def rank_higher_than(r1, r2):
-  
-    
-  
- 
-  
-  
+
+def rank_higher_than():
+  points_dict = {"A": 11, "7": 10, "K": 4, "J": 3, "Q": 2}
+
+  card1 = str(input("Enter a card. "))
+  card2 = str(input("Enter a card. "))
+
+  r1 = card1[0]
+  r2 = card2[0]
+
+  if points_dict[r1] > points_dict[r2]:
+    print("This card: " + r1 + " is greater than " + r2)
+  elif points_dict[r2] > points_dict[r1]:
+    print("This card: " + r2 + " is greater than " + r1)
+  elif points_dict[r2] == points_dict[r1]:
+    print("Both cards are of equal value")
+  else:
+    return False
+
+  # if r1 == points_dict[r1] and r2 == points_dict[r2]:
+
+
+
 # question = str(input("Enter a card"))
 
 # print(valid_suit(question))
 
-rank_points()
+print(rank_higher_than())
