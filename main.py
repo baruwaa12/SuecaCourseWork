@@ -1,84 +1,28 @@
-# Suits and Ranks
+import unittest
 
-# This function checks whether if the string entered has a valid suit
+from sueca_suits_ranks import rank_points, suit_full_names
 
-rank = ['A', '2', '3', '4', '5', '6', '7', 'Q', 'J', 'K']
+class Tests_Ranks(unittest.TestCase):
+    def test_rank_points_should_return_ten_for_any_seven(self):
+      # print(rank_points("7"))
+      self.assertTrue(rank_points("7") == 10, "Value is wrong")
 
-suit = ['H', 'C', 'S', 'D']
-
-# This function checks whether if the string entered has a valid suit
-
-def valid_suit(s):
-  # AH
-  for i in range(0, len(suit)):
-    if s[1] != suit[i]:
-      print(s[1] + " not equal " + suit[i])  #logging
-    else:
-      return True
-  return False
-
-# Function to check if the rank is valid 
+      ## These are sample tests for templates.
+    # def test_strings_c(self):
+    #     self.assertTrue(1 == 1, "Not true")
+      
+    # def test_strings_b(self):
+    #     self.assertEqual( 'a'*4, 'aaaa')
+      
+    # # Returns True if the string contains 4 a.
+    # def test_strings_a(self):
+    #     self.assertEqual( 'a'*4, 'aaaa')
   
-def valid_rank(r):
-  # r = str(input("Enter a card with a valid rank. " ))
-  for x in range(0, len(rank)):
-    if r[0] != rank[x]:
-      print(r[0] + " not equal " + rank[x])
-    else:
-      return True
-  return False
 
-
-# Function to return the name of the suit when given the initials..
-def suit_full_names():
-  suitDict = {"S": "Spades", "D": "Diamonds", "H": "Hearts", "C": "Cubs"}
-
-  suitName = str(input("Enter a card. "))
-
-  if suitName[1] == "S":
-    print(suitDict["S"])
-  elif suitName[1] == "D":
-    print(suitDict["D"])
-  elif suitName[1] == "H":
-    print(suitDict["H"])
-  elif suitName[1] == "C":
-    print(suitDict["C"])
-  else:
-    raise ValueError("invalid suit symbol " + suitName[1])
-
-
-# Function which returns the points of card when it is entered,
-def rank_points():
-  points_dict = {"A": 11, "7": 10, "K": 4, "J": 3, "Q": 2}
-
-  suitName = str(input("Enter a card. "))
-
-  if suitName[0] == "A":
-    print(points_dict["A"])
-  elif suitName[0] == "7":
-    print(points_dict["7"])
-  elif suitName[0] == "K":
-    print(points_dict["K"])
-  elif suitName[0] == "J":
-    print(points_dict["J"])
-  elif suitName[0] == "Q":
-    print(points_dict["Q"])
-  else:
-    raise ValueError("invalid suit symbol " + suitName[1])
-
-
-def rank_higher_than(r1, r2):
-  points_dict = {"A": 11, "7": 10, "K": 4, "J": 3, "Q": 2}
-
+class Test_Suit_full_names(unittest.TestCase):
+    def test_give_S_should_return_SPADES(self)  :
+       self.assertTrue(suit_full_names("S") == "Spades", "S should be Spades") 
+      
+if __name__ == '__main__':
+  unittest.main(exit=False)
   
-  if points_dict[r1] > points_dict[r2]:
-    print("This card: " + r1 + " is greater than " + r2)
-  elif points_dict[r2] > points_dict[r1]:
-    print("This card: " + r2 + " is greater than " + r1)
-  elif points_dict[r2] == points_dict[r1]:
-    print("Both cards are of equal value")
-  else:
-    return False
-
-
-rank_higher_than("A", "J")
