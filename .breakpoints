@@ -1,17 +1,11 @@
 {
   "files": {
-    "tests.py": [
+    "main.py": [
       {
-        "id": "52ea5910-32a0-4b24-b398-3f4f44091b29",
-        "line": 5,
-        "version": 98,
-        "index": 60
-      },
-      {
-        "id": "5e1a31c1-ee67-44ea-a9ea-20a13b55747e",
-        "line": 11,
-        "version": 98,
-        "index": 280
+        "id": "966c6089-7250-4034-9a65-80ca47c9ec2f",
+        "line": 1,
+        "version": 10404,
+        "index": 0
       }
     ]
   }
