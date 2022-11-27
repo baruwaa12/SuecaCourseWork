@@ -44,7 +44,7 @@ def suit_full_names(r):
   elif r == "C":
     return suitDict["C"]
   else:
-    raise ValueError("invalid suit symbol " + suitName[1])
+    raise ValueError("invalid suit symbol " + r)
   return ""
 
 
