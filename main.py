@@ -33,31 +33,31 @@ from card import *
 #     def test_give_H_should_return_Hearts(self)  :
 #        self.assertTrue(suit_full_names("H") == "Hearts", "H should be Hearts")
 
-# class Test_Valid_Ranks(unittest.TestCase):
-#     def test_is_three_should_return_True(self)  :
-#        self.assertTrue(valid_rank("3") == True, "3 is a valid rank")
+class Test_Valid_Ranks(unittest.TestCase):
+    def test_is_three_should_return_True(self)  :
+       self.assertTrue(valid_rank("3") == True, "3 is a valid rank")
 
-#     def test_does_king_return_true(self):
-#        self.assertTrue(valid_rank("K") == True, "K is a valid rank")
+    def test_does_king_return_true(self):
+       self.assertTrue(valid_rank("K") == True, "K is a valid rank")
 
-#     def test_does_queen_return_true(self):
-#        self.assertTrue(valid_rank("Q") == True, "Q is a valid rank")
+    def test_does_queen_return_true(self):
+       self.assertTrue(valid_rank("Q") == True, "Q is a valid rank")
 
-#     def test_does_Jack_return_true(self):
-#        self.assertTrue(valid_rank("J") == True, "J is a valid rank")
+    def test_does_Jack_return_true(self):
+       self.assertTrue(valid_rank("J") == True, "J is a valid rank")
 
-# class Test_Valid_Suit(unittest.TestCase):
-#   def test_is_Heart_should_return_True(self):
-#     self.assertTrue(valid_suit("H") == True, "H is a valid suit")
+class Test_Valid_Suit(unittest.TestCase):
+  def test_is_Heart_should_return_True(self):
+    self.assertTrue(valid_suit("H") == True, "H is a valid suit")
 
-#   def test_is_Cubs_should_return_True(self):
-#     self.assertTrue(valid_suit("C") == True, "C is a valid suit")
+  def test_is_Cubs_should_return_True(self):
+    self.assertTrue(valid_suit("C") == True, "C is a valid suit")
 
-#   def test_is_Spades_should_return_True(self):
-#     self.assertTrue(valid_suit("S") == True, "S is a valid suit")
+  def test_is_Spades_should_return_True(self):
+    self.assertTrue(valid_suit("S") == True, "S is a valid suit")
 
-#   def test_is_Diamonds_Should_return_True(self):
-#     self.assertTrue(valid_suit("D") == True, "D is a valid suit")
+  def test_is_Diamonds_Should_return_True(self):
+    self.assertTrue(valid_suit("D") == True, "D is a valid suit")
 
 # class Test_rank_higher_than(unittest.TestCase):
 #   def test_King_Is_Higher_Than_Jack(self):
@@ -77,11 +77,15 @@ from card import *
 
 
 
-class Test_Higher_Than(unittest.TestCase):
-  # Instantiate a new instance of the Card
-    def test_ace_of_spade_shouldbe_higher_than_king_of_spades(self):
-      myCard = Card("AS", "S")
-      self.assertTrue(myCard.higher_than("KS", "S", "D") == True, "Ace is higher than King")
+# class Test_Higher_Than(unittest.TestCase):
+#   # Instantiate a new instance of the Card
+#     def test_ace_of_spade_shouldbe_higher_than_king_of_spades(self):
+#       myCard = Card("AS", "S")
+#       self.assertTrue(myCard.higher_than("KS", "S", "D") == True, "Ace is higher than King")
+
+      
+
+
 
 
 if __name__ == '__main__':

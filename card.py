@@ -2,28 +2,40 @@
 
 from sueca_suits_ranks import valid_suit, valid_rank, rank_higher_than, rank_points
 
-
 class CardInvalidError(Exception):
   pass
   
   # Function that takes a card then returns an object of class card
-  def parseCard(cs):
+def parseCard(cs):
     # cardEntered = str(input("Enter a card?"))
     if valid_rank(cs) & valid_suit(cs) == True:
       print("The card is valid")
     else:
       raise CardInvalidError("CardInvalid: Card " + cs + " is invalid!")
 
-  def higher_than(self, other, suit, trump):
+def higher_than(self, other, suit, trump):
     return True
 
     
+
+
+
 class Card:
 
   def __init__(self, cardName, cardSuit):
     self.cardName = cardName
     self.cardSuit = cardSuit      
 
+  @property
+  def card_Name(self):
+    return self.cardName
+
+  @property
+  def card_Suit(self):
+    return self.cardSuit
+
+  
+    
   # Function to return the points of the currently known card  
   def points(self, card):
     points_dict = {"A": 11, "7": 10, "K": 4, "J": 3, "Q": 2}
@@ -44,7 +56,7 @@ class Card:
 
   # Function which compares two suits of 2 different cards 
   def higher_than(self, other, suit, trump):
-    if rank_higher_than(self.cardName, other.cardName) != True:
-      return False
-    else:
-      return True
+    print(self)
+    return rank_higher_than(self.cardName[0], other[0])
+
+

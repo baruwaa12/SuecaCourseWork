@@ -11,9 +11,7 @@ suit = ['H', 'C', 'S', 'D']
 def valid_suit(s):
   # AH
   for i in range(0, len(suit)):
-    if s != suit[i]:
-      print(s + " not equal " + suit[i]) 
-    else:
+    if s == suit[i]:
       return True
   return False
 
@@ -21,9 +19,7 @@ def valid_suit(s):
   
 def valid_rank(r):
   for x in range(0, len(rank)):
-    if r != rank[x]:
-      print("Invalid card rank")
-    else:
+    if r == rank[x]:
       return True
   return False
 
