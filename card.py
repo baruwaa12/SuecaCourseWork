@@ -8,16 +8,10 @@ class CardInvalidError(Exception):
   # Function that takes a card then returns an object of class card
 def parseCard(cs):
     # cardEntered = str(input("Enter a card?"))
-    if valid_rank(cs) & valid_suit(cs) == True:
-      print("The card is valid")
+    if valid_rank(cs[0]) & valid_suit(cs[1]) == True:
+      return cs
     else:
       raise CardInvalidError("CardInvalid: Card " + cs + " is invalid!")
-
-def higher_than(self, other, suit, trump):
-    return True
-
-    
-
 
 
 class Card:
@@ -34,7 +28,6 @@ class Card:
   def card_Suit(self):
     return self.cardSuit
 
-  
     
   # Function to return the points of the currently known card  
   def points(self, card):
@@ -55,8 +48,19 @@ class Card:
       return False
 
   # Function which compares two suits of 2 different cards 
-  def higher_than(self, other, suit, trump):
-    print(self)
-    return rank_higher_than(self.cardName[0], other[0])
+  
+  def higher_than(self, other, s, t):
+    comparing_card = self.cardName
+    compared_card = other
+    lead_suit = s
+    trump_suit = t
 
+    if comparing_card[1] == lead_suit and compared_card[1] != trump_suit:
+      return True
+    else:
+      return False
+
+  def show(self):
+    newCard = self.cardName
+    return newCard
 

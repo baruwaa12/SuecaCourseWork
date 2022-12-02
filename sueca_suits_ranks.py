@@ -11,7 +11,7 @@ suit = ['H', 'C', 'S', 'D']
 def valid_suit(s):
   # AH
   for i in range(0, len(suit)):
-    if s == suit[i]:
+    if s[0] == suit[i]:
       return True
   return False
 
@@ -19,10 +19,9 @@ def valid_suit(s):
   
 def valid_rank(r):
   for x in range(0, len(rank)):
-    if r == rank[x]:
+    if r[0] == rank[x]:
       return True
   return False
-
 
 
 # Function to return the name of the suit when given the initials..

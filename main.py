@@ -4,6 +4,8 @@ from sueca_suits_ranks import *
 
 from card import *
 
+from sueca_tricks import *
+
 # class Tests_Ranks(unittest.TestCase):
 #     def test_rank_points_should_return_ten_for_any_seven(self):
 #       self.assertTrue(rank_points("7") == 10, "Value is wrong")
@@ -33,31 +35,31 @@ from card import *
 #     def test_give_H_should_return_Hearts(self)  :
 #        self.assertTrue(suit_full_names("H") == "Hearts", "H should be Hearts")
 
-class Test_Valid_Ranks(unittest.TestCase):
-    def test_is_three_should_return_True(self)  :
-       self.assertTrue(valid_rank("3") == True, "3 is a valid rank")
+# class Test_Valid_Ranks(unittest.TestCase):
+#     def test_is_three_should_return_True(self)  :
+#        self.assertTrue(valid_rank("3") == True, "3 is a valid rank")
 
-    def test_does_king_return_true(self):
-       self.assertTrue(valid_rank("K") == True, "K is a valid rank")
+#     def test_does_king_return_true(self):
+#        self.assertTrue(valid_rank("K") == True, "K is a valid rank")
 
-    def test_does_queen_return_true(self):
-       self.assertTrue(valid_rank("Q") == True, "Q is a valid rank")
+#     def test_does_queen_return_true(self):
+#        self.assertTrue(valid_rank("Q") == True, "Q is a valid rank")
 
-    def test_does_Jack_return_true(self):
-       self.assertTrue(valid_rank("J") == True, "J is a valid rank")
+#     def test_does_Jack_return_true(self):
+#        self.assertTrue(valid_rank("J") == True, "J is a valid rank")
 
-class Test_Valid_Suit(unittest.TestCase):
-  def test_is_Heart_should_return_True(self):
-    self.assertTrue(valid_suit("H") == True, "H is a valid suit")
+# class Test_Valid_Suit(unittest.TestCase):
+#   def test_is_Heart_should_return_True(self):
+#     self.assertTrue(valid_suit("H") == True, "H is a valid suit")
 
-  def test_is_Cubs_should_return_True(self):
-    self.assertTrue(valid_suit("C") == True, "C is a valid suit")
+#   def test_is_Cubs_should_return_True(self):
+#     self.assertTrue(valid_suit("C") == True, "C is a valid suit")
 
-  def test_is_Spades_should_return_True(self):
-    self.assertTrue(valid_suit("S") == True, "S is a valid suit")
+#   def test_is_Spades_should_return_True(self):
+#     self.assertTrue(valid_suit("S") == True, "S is a valid suit")
 
-  def test_is_Diamonds_Should_return_True(self):
-    self.assertTrue(valid_suit("D") == True, "D is a valid suit")
+#   def test_is_Diamonds_Should_return_True(self):
+#     self.assertTrue(valid_suit("D") == True, "D is a valid suit")
 
 # class Test_rank_higher_than(unittest.TestCase):
 #   def test_King_Is_Higher_Than_Jack(self):
@@ -75,15 +77,24 @@ class Test_Valid_Suit(unittest.TestCase):
 #   def test_Ace_Is_Higher_Than_Queen(self):
 #     self.assertTrue(rank_higher_than("A", "Q") == True, "Ace is higher than Queen")
 
+ 
+
+    # def test_king_of_spades_shouldbe_higher_than_jack_of_diamonds(self):
+    #   myCard = Card("KS", "S")
+    #   self.assertFalse(myCard.higher_than("JD", "D", "D") == False, "Ace is higher than King")
+
+    # def test_Queeen_of_Diamonds_shouldbe_lower_than_seven_of_diamonds(self):
+    #   myCard = Card("QD", "D")
+    #   self.assertFalse(myCard.higher_than("7D", "D", "C") == False, "Ace is higher than King")
+
+    # def test_Seven_of_clubs_shouldbe_higher_than_queen_of_spades(self):
+    #   self.assertTrue(myCard.higher_than("QS", "S", "D") == True, "Ace is higher than King")
 
 
-# class Test_Higher_Than(unittest.TestCase):
-#   # Instantiate a new instance of the Card
-#     def test_ace_of_spade_shouldbe_higher_than_king_of_spades(self):
-#       myCard = Card("AS", "S")
-#       self.assertTrue(myCard.higher_than("KS", "S", "D") == True, "Ace is higher than King")
 
-      
+class Test_parseTrick_Test(unittest.TestCase):
+    def test_parseTrick_0(self):
+      self.assertTrue(parseTrick("AH 2S 7D QD") == True, "This is a valid trick") 
 
 
 
