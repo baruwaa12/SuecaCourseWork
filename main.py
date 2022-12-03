@@ -94,7 +94,37 @@ from sueca_tricks import *
 
 class Test_parseTrick_Test(unittest.TestCase):
     def test_parseTrick_0(self):
-      self.assertTrue(parseTrick("AH 2S 7D QD") == True, "This is a valid trick") 
+      self.assertTrue(parseTrick("AH 2S 7D QD") == True, "This is a valid trick")
+
+    def test_parseTrick_1(self):
+      self.assertTrue(parseTrick("2D AS QC 4H") == True, "This is a valid trick")
+
+    def test_parseTrick_2(self):
+      self.assertTrue(parseTrick("2C 6C AS KD") == True, "This is a valid trick")
+
+    def test_parseTrick_3(self):
+      self.assertTrue(parseTrick("3S JD KH AD") == True, "This is a valid trick")
+
+    def test_parseTrick_4(self):
+      self.assertTrue(parseTrick("AA JD KH AD") == False, "This is not a valid trick")
+
+    def test_parseTrick_5(self):
+      self.assertTrue(parseTrick("AB JD KH AD") == False, "This is not a valid trick")
+
+    def test_parseTrick_6(self):
+      self.assertTrue(parseTrick("AA J7 KH AD") == False, "This is not a valid trick")
+
+    def test_parseTrick_7(self):
+      self.assertTrue(parseTrick("AB CD EH AD") == False, "This is not a valid trick")
+
+
+    
+
+    
+      
+
+
+
 
 
 
