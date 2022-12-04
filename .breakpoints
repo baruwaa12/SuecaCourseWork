@@ -2,10 +2,18 @@
   "files": {
     "main.py": [
       {
-        "id": "eae933b2-00a3-479c-81b2-a5ad1a3cc669",
-        "line": 115,
-        "version": 13324,
-        "index": 4513
+        "id": "69bd9d81-bb7a-46a8-b1f6-e27b54674ef3",
+        "line": 123,
+        "version": 14223,
+        "index": 4777
+      }
+    ],
+    "sueca_tricks.py": [
+      {
+        "id": "a2cfce7b-434e-4085-872f-6f862502f99e",
+        "line": 48,
+        "version": 2544,
+        "index": 1052
       }
     ]
   }

@@ -15,8 +15,39 @@ def parseTrick(cs):
     # Return an exception
     raise ValueError("This is not a valid trick")
 
-  
-    
-    
 
+def parseGameFile(fname):
+  f = open(fname, "r")
+  for x in f:
+    parseTrick(x)
+
+
+class Trick:
+  def __init__(self, trickStr):
+    self.trickStr = trickStr
+
+  @property
+  def trick_String(self):
+    return self.trickStr
+
+  # Given a trick return the total number of points
+  # "AH 2S 7D QD" = 23
+  # Split to array of cards
+  # initial totalPoints to 0
+  # Foreach each card
+    # take the first character, 
+    # determine the points for that rank,
+    # add the value to the totalPoints.
+  def points(self):
+    points_dict = {"A": 11, "7": 10, "K": 4, "J": 3, "Q": 2}
+
+    cards = self.trickStr.split()
+    totalPoints = 0
+    
+    for card in cards:
+      key = card[0]
+      # return 0 if the key is not in the dictionary
+      totalPoints += points_dict.get(key, 0)
+      
+    return totalPoints
     
