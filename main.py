@@ -105,8 +105,8 @@ class Test_rank_higher_than(unittest.TestCase):
   def test_3_should_be_equal_To_A(self):
     self.assertTrue(rank_higher_than("3", "A") == False, "3 is lower than ace")
 
-  def test_6_and_5_should_return_False(self):
-   self.assertTrue(rank_higher_than("6", "5") == False, "6 has an equal rank to 5")
+  def test_6_and_5_should_return_True(self):
+   self.assertTrue(rank_higher_than("6", "5") == True, "6 has an equal rank to 5 both have zero points")
 
   def test_B_and_B_should_return_False(self):
     with self.assertRaises(ValueError) as context:

@@ -91,7 +91,13 @@ def rank_higher_than(r1, r2):
   if valueR2 == -1:
       raise ValueError("invalid rank symbol " + r2)
     
-  
+  # if values are == 0, then compare keys (may convert to )
+  if valueR1 == 0 and valueR2 == 0:
+   if int(r1) > int(r2):
+     return True
+   else:
+     return False
+     
   if valueR1 > valueR2:  
     return True
   else:
