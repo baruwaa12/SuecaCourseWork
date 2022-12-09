@@ -2,23 +2,26 @@
 
 from sueca_suits_ranks import valid_suit, valid_rank, rank_higher_than, rank_points
 
-class CardInvalidError(Exception):
+class CardInvalid(Exception):
   pass
   
   # Function that takes a card then returns an object of class card
 def parseCard(cs):
     # cardEntered = str(input("Enter a card?"))
     if valid_rank(cs[0]) & valid_suit(cs[1]) == True:
-      return True
+      newCard = Card()
+      newCard.cardName = cs
+      newCard.cardSuit = cs[1]
+      return newCard
     else:
-      raise CardInvalidError("CardInvalid: Card " + cs + " is invalid!")
+      raise CardInvalid("CardInvalid: Card " + cs + " is invalid!")
 
 
 class Card:
 
   def __init__(self):
-    self.cardName = cardName
-    self.cardSuit = cardSuit      
+    self.cardName = ""
+    self.cardSuit = ""
 
   @property
   def card_Name(self):
@@ -30,7 +33,7 @@ class Card:
 
     
   # Function to return the points of the currently known card  
-  def points(self, card):
+  def points(self):
     points_dict = {"A": 11, "7": 10, "K": 4, "J": 3, "Q": 2}
 
     if card[0] == "A":

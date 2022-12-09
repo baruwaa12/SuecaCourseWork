@@ -76,10 +76,18 @@ class Test_Valid_Suit(unittest.TestCase):
 class Test_card_parsing(unittest.TestCase):
 
   def test_is_4c_Should_return_True(self):
-    self.assertTrue(parseCard("4C") == True, "Four of clubs is a valid card")
+    self.assertTrue(parseCard("4C").card_Name == "4C", "Four of clubs is a valid card")
 
   def test_is_AD_Should_return_True(self):
-    self.assertTrue(parseCard("AD") == True, "Ace of Diamonds is a valid card")
+    self.assertTrue(parseCard("AD").card_Name == "AD", "Ace of Diamonds is a valid card")
+
+  def test_is_AD_Should_return_True(self):
+    with self.assertRaises(CardInvalidError) as context:
+            parseCard("4K")
+
+  
+
+  
   
   
 
@@ -113,17 +121,20 @@ class Test_rank_higher_than(unittest.TestCase):
             rank_higher_than("B", "B")
 
 
-  def test_king_of_spades_shouldbe_higher_than_jack_of_diamonds(self):
-    myCard = Card("KS", "S")
-    self.assertTrue(myCard.higher_than("JD", "D", "D") == False, "King of spades should be low")
 
-  def test_Queen_of_Diamonds_shouldbe_lower_than_seven_of_diamonds(self):
-    myCard = Card("QD", "D")
-    self.assertTrue(myCard.higher_than("7D", "D", "C") == False, "Queen of diamonds has a lower rank than seven of diamonds")
+# class Test_1_card_higher_than_the_other(unittest.TestCase):
 
-  def test_Seven_of_clubs_shouldbe_higher_than_queen_of_spades(self):
-    myCard = Card("7D"), "D"
-    self.assertTrue(myCard.higher_than("QS", "S", "D") == True, "Ace is higher than King")
+#   def test_king_of_spades_shouldbe_higher_than_jack_of_diamonds(self):
+#     myCard = Card("KS", "S")
+#     self.assertTrue(myCard.higher_than("JD", "D", "D") == False, "King of spades should be low")
+
+#   def test_Queen_of_Diamonds_shouldbe_lower_than_seven_of_diamonds(self):
+#     myCard = Card("QD", "D")
+#     self.assertTrue(myCard.higher_than("7D", "D", "C") == False, "Queen of diamonds has a lower rank than seven of diamonds")
+
+#   def test_Seven_of_clubs_shouldbe_higher_than_queen_of_spades(self):
+#     myCard = Card("7D")
+#     self.assertTrue(myCard.higher_than("QS", "S", "D") == True, "Ace is higher than King")
 
 
 
