@@ -50,4 +50,29 @@ class Trick:
       totalPoints += points_dict.get(key, 0)
       
     return totalPoints
+
+
+  # Given the trump suit determine who the winner is of a trick
+  # Split the trick into array of cards.
+  # Compare the suits of the cards to the trump suit
+  # Whichever card has the same suit as the trump suit is the winner of the trick
+  
+  def trick_winner(self, t):
+    cards = self.trickStr.split()
+
+    for card in cards:
+        winningPlayer = cards.index(card)
+        if card[1] == t:
+          return winningPlayer 
+          
+    
+
+
+    
+
+
+  
+
+
+  
     

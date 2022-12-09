@@ -9,14 +9,14 @@ class CardInvalidError(Exception):
 def parseCard(cs):
     # cardEntered = str(input("Enter a card?"))
     if valid_rank(cs[0]) & valid_suit(cs[1]) == True:
-      return cs
+      return True
     else:
       raise CardInvalidError("CardInvalid: Card " + cs + " is invalid!")
 
 
 class Card:
 
-  def __init__(self, cardName, cardSuit):
+  def __init__(self):
     self.cardName = cardName
     self.cardSuit = cardSuit      
 
